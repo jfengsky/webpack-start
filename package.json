@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run watch & npm run server",
     "build": "webpack --progress --colors",
-    "watch-js": "webpack --progress --colors --watch",
+    "watch": "webpack --progress --colors --watch",
     "server": "webpack-dev-server --watch --hot --inline",
-    "watch": "npm run watch-js & npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
