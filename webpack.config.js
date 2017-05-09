@@ -1,9 +1,8 @@
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: {
-        index: './src/index.js'
+        bundle: './src/index.js'
     },
     output: {
         path: __dirname + '/dist/',
@@ -23,15 +22,6 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: ['vendor']
-        }),
-        new HtmlWebpackPlugin({
-            filename: '../index.html',
-            template: 'src/index.html'
         })
-    ],
-    devServer: {
-        // contentBase: __dirname + "/dist/",
-        port: 8080,
-        inline:true
-    }
+    ]
 }
