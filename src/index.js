@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(
-    <div>
+    <h1>
         webpack first
-    </div>,
+    </h1>,
     document.getElementById('root')
 )
