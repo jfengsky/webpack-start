@@ -1,7 +1,7 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
-import App from '../src/index';
+import App from '../src/Root';
 
 function shallowRender(Component) {
   const renderer = TestUtils.createRenderer();
@@ -10,10 +10,9 @@ function shallowRender(Component) {
 }
 
 describe('Shallow Rendering', function () {
-  it('App\'s title should be Todos', function () {
+  it('Root Component test', function () {
     const app = shallowRender(App);
-    // component's shallow rendering has props.children
-    expect(app.props.children[0].type).to.equal('h1');
-    expect(app.props.children[0].text).to.equal('webpack first');
+    expect(app.props.children).to.equal('webpack first');
+    expect(app.type).to.equal('h1');
   });
 });

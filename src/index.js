@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Root from './Root'
 
 ReactDOM.render(
-    <h1>
-        webpack first
-    </h1>,
+    <Root />,
     document.getElementById('root')
 )
