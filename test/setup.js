@@ -1,9 +1,9 @@
-import jsdom from 'jsdom'
+import 'jsdom-global/register'
+// import jsdom from 'jsdom';
 
-const { JSDOM } = jsdom
 
-if (typeof document === 'undefined') {
-  global.document = new JSDOM('<!doctype html><html><body></body></html>');
-  global.window = document.defaultView;
-  // global.navigator = global.window.navigator;
-}
+// if (typeof document === 'undefined') {
+//   global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
+//   global.window = document.defaultView;
+//   global.navigator = global.window.navigator;
+// }

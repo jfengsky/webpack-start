@@ -1,11 +1,10 @@
 import React from 'react';
-// import { findDOMNode } from 'react-dom';
-import jsdom from 'jsdom';
+import { findDOMNode } from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import App from '../src/Root';
 
-const { JSDOM } = jsdom
+// 具体可参考 https://yq.aliyun.com/articles/54265
 
 function shallowRender(Component) {
   const renderer = TestUtils.createRenderer();
@@ -22,15 +21,11 @@ describe('Shallow Rendering', function () {
 
   it('Root Component event test', function () {
 
-    if (typeof document === 'undefined') {
-      global.document = new JSDOM('<!doctype html><html><body></body></html>');
-      global.window = document.defaultView;
-      // global.navigator = global.window.navigator;
-    }
-
     const app = TestUtils.renderIntoDocument(<App />);
-    // const appDOM = findDOMNode(app);
-    // const testButton = appDOM.querySelector('button')
-    // TestUtils.Simulate.click(testButton)
+    const appDOM = findDOMNode(app);
+    const testButton = appDOM.querySelector('input')
+    // 模拟点击
+    TestUtils.Simulate.click(testButton)
+    expect(app.state.title).to.equal('webpack clicked')
   });
 });
